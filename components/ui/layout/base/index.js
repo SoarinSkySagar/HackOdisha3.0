@@ -1,18 +1,21 @@
-import { Web3Provider } from "@components/providers"
 import { Navbar, Footer } from "@components/ui/common"
 
 export default function BaseLayout({children}) {
   return (
     <>
-      <Web3Provider>
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="flex flex-row min-h-screen">
+        <div className=" w-16">
         <Navbar />
-        <div className="fit">
-          {children}
+        </div>
+        <div className="flex-grow flex-col">
+          <div className="flex-grow h-full" >
+            {children}
+          </div>
+          <div className="h-7">
+            <Footer/>
+          </div>
         </div>
       </div>
-      <Footer />
-      </Web3Provider>
     </>
   )
 }
